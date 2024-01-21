@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv2dkfghp6uwq"]
+
+[ext_resource type="Script" path="res://PruebaWwise.gd" id="1_dgcxe"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_dgcxe")
+
+[node name="AkBank" type="AkBank" parent="."]
+bank = {
+"id": 1355168291,
+"name": "Init"
+}
+load_on = 1
+unload_on = 3
+
+[node name="AkBank2" type="AkBank" parent="."]
+bank = {
+"id": 3161908922,
+"name": "Main"
+}
+load_on = 1
+unload_on = 3
+
+[node name="AkEvent2D" type="AkEvent2D" parent="."]
+event = {
+"id": 3885268471,
+"name": "Drive_Motor_Player"
+}
+trigger_on = 2
+stop_on = 3
+
+[node name="AkListener2D" type="AkListener2D" parent="."]
