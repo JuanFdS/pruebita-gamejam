@@ -4,10 +4,12 @@ const SPEED = 300.0
 const TURN_SPEED = 3.0
 
 var direccion: Vector2 = Vector2.UP
+const CAMINO = preload("res://player/Camino.tscn")
 
-@onready var camino: Line2D = $Line2D
+@onready var camino: Camino = CAMINO.instantiate()
 
 func _ready():
+	get_parent().add_child.call_deferred(camino)
 	$Timer.timeout.connect(func():
 		self.dejar_camino()
 		self.dejar_halo()
@@ -20,7 +22,7 @@ func dejar_camino():
 	
 	if indice_nuevo_punto != 0:
 		var forma_colision = CollisionShape2D.new()
-		$Line2D/StaticBody2D.add_child(forma_colision)
+		camino.get_node("Area2D").add_child(forma_colision)
 		var segmento = SegmentShape2D.new()
 		segmento.a = camino.points[indice_nuevo_punto - 1]
 		segmento.b = camino.points[indice_nuevo_punto]
@@ -49,3 +51,6 @@ func _physics_process(delta):
 		rotation = direccion.angle() + PI/2
 
 	move_and_slide()
+
+func chocaste():
+	queue_free()
