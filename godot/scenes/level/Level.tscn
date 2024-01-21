@@ -22,10 +22,13 @@ texture = ExtResource("1_8e7d1")
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_j5xtj")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CharacterBody2D"]
+
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
 [node name="Pared" type="StaticBody2D" parent="."]
+position = Vector2(3, 6)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Pared"]
 position = Vector2(582, 248)
