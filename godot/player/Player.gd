@@ -6,6 +6,8 @@ const TURN_SPEED = 3.0
 var direccion: Vector2 = Vector2.UP
 const CAMINO = preload("res://player/Camino.tscn")
 
+@export var numero_jugador: int = 0
+
 @onready var camino: Camino = CAMINO.instantiate()
 
 func _ready():
@@ -43,7 +45,7 @@ func dejar_halo():
 	tween.finished.connect(func(): s.queue_free())
 
 func _physics_process(delta):
-	var target_direccion := Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	var target_direccion := MultiplayerInput.get_vector(numero_jugador, "move_left", "move_right", "move_up", "move_down")
 	
 	if !target_direccion.is_zero_approx():
 		direccion = direccion.move_toward(target_direccion, delta * TURN_SPEED)
