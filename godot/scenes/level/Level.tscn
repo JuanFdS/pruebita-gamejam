@@ -1,5 +1,46 @@
-[gd_scene format=3 uid="uid://t0j8nsaogi6e"]
+[gd_scene load_steps=5 format=3 uid="uid://t0j8nsaogi6e"]
+
+[ext_resource type="Script" path="res://player/Player.gd" id="1_1bkyq"]
+[ext_resource type="Texture2D" uid="uid://d4d3y4s1d4yxe" path="res://assets/player/moto.png" id="1_8e7d1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5xtj"]
+size = Vector2(20, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04qdl"]
+size = Vector2(602, 20)
 
 [node name="Level" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(244, 147)
+script = ExtResource("1_1bkyq")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_8e7d1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_j5xtj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Pared" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pared"]
+position = Vector2(582, 248)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_04qdl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Pared"]
+position = Vector2(-7.00001, 253)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_04qdl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared"]
+position = Vector2(291, 0)
+shape = SubResource("RectangleShape2D_04qdl")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Pared"]
+position = Vector2(291, 332)
+shape = SubResource("RectangleShape2D_04qdl")
