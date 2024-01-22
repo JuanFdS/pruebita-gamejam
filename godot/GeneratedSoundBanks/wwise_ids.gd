@@ -6,6 +6,7 @@ class EVENTS:
 	const EXPLOTA = 680189572
 	const MUSICA = 1730564739
 	const STOP_MOTOR = 278130187
+	const TURBO = 1624708103
 	const NUCLEAR = 2281418185
 
 	const _dict = {
@@ -13,6 +14,7 @@ class EVENTS:
 		"Explota": EXPLOTA,
 		"Musica": MUSICA,
 		"Stop_Motor": STOP_MOTOR,
+		"Turbo": TURBO,
 		"Nuclear": NUCLEAR
 	}
 

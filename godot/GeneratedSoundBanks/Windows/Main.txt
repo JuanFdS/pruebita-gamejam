@@ -1,11 +1,13 @@
 Event	ID	Name			Wwise Object Path	Notes
 	278130187	Stop_Motor			\Default Work Unit\Stop_Motor	
 	680189572	Explota			\Default Work Unit\Explota	
+	1624708103	Turbo			\Default Work Unit\Turbo	
 	1730564739	Musica			\Default Work Unit\Musica	
 	2281418185	Nuclear			\Default Work Unit\Nuclear	
 	3432657254	Run_Motor			\Default Work Unit\Run_Motor	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	8609086	Turbo	E:\Documentos\WwiseProjects\pruebita-gamejam\.cache\Windows\SFX\Turbo_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turbina\Turbo		490312
 	12819577	Explota	E:\Documentos\WwiseProjects\pruebita-gamejam\.cache\Windows\SFX\Explota_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Explota		245204
 	434895889	Musiquita	E:\Documentos\WwiseProjects\pruebita-gamejam\.cache\Windows\SFX\Musiquita_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Musica\Musiquita		2353120
 	516738102	Nuclear	E:\Documentos\WwiseProjects\pruebita-gamejam\.cache\Windows\SFX\Nuclear_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nuclear		980524

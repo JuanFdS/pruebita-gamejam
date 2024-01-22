@@ -162,10 +162,14 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{D61C0A68-58F9-F4BD-16A5-5BBD6CDC7131}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{461953E7-C3AD-362E-DD38-E88F74B2FFD2}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
+				<File Id="8609086" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Turbo.wav</ShortName>
+					<CachePath>SFX/Turbo_818F3B66.wem</CachePath>
+				</File>
 				<File Id="12819577" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Explota.wav</ShortName>
 					<CachePath>SFX/Explota_818F3B66.wem</CachePath>
@@ -213,8 +217,13 @@
 						<MediaRef Id="673327973"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1624708103" Name="Turbo">
+					<MediaRefs>
+						<MediaRef Id="8609086"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{4CE05818-7197-619F-16D5-415BE0096606}</FileHash>
+	<FileHash>{C6A670F1-D431-E304-27CC-8632AC73B7D5}</FileHash>
 </SoundBanksInfo>
