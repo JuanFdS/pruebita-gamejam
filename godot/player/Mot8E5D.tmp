@@ -1,13 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bi5xf2kuaj6ku"]
+[gd_scene load_steps=4 format=3 uid="uid://bi5xf2kuaj6ku"]
 
 [ext_resource type="Script" path="res://player/Player.gd" id="1_11tle"]
 [ext_resource type="SpriteFrames" uid="uid://5e0dlsqn58v6" path="res://assets/player/MotoNaranja.tres" id="2_0pkva"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5xtj"]
 size = Vector2(20, 58)
-
-[sub_resource type="Gradient" id="Gradient_idk60"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1)
 
 [node name="Moto" type="CharacterBody2D"]
 position = Vector2(244, 147)
@@ -39,16 +36,3 @@ event = {
 "id": 2281418185,
 "name": "Nuclear"
 }
-
-[node name="Turbo" type="CPUParticles2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(0, 25)
-amount = 40
-speed_scale = 4.0
-direction = Vector2(0, 1)
-spread = 30.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 35.18
-initial_velocity_max = 135.68
-scale_amount_max = 10.05
-color_ramp = SubResource("Gradient_idk60")

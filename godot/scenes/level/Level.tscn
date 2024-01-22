@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://t0j8nsaogi6e"]
+[gd_scene load_steps=13 format=3 uid="uid://t0j8nsaogi6e"]
 
 [ext_resource type="PackedScene" uid="uid://bi5xf2kuaj6ku" path="res://player/Moto.tscn" id="1_afkvs"]
 [ext_resource type="Script" path="res://scenes/level/Level.gd" id="1_mk5g2"]
@@ -8,6 +8,7 @@
 [ext_resource type="SpriteFrames" uid="uid://c0n5unxlukp12" path="res://assets/player/MotoRoja.tres" id="4_6htjq"]
 [ext_resource type="SpriteFrames" uid="uid://dfsxhv3ek3pd0" path="res://assets/player/MotoVerde.tres" id="5_0by8b"]
 [ext_resource type="Script" path="res://props/AreaDeMuerte.gd" id="6_pyhkn"]
+[ext_resource type="Script" path="res://addons/shaker/shaker.gd" id="9_cdgol"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_04qdl"]
 size = Vector2(2523, 104.004)
@@ -19,6 +20,10 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 30
 shadow_color = Color(0, 0, 0, 0.490196)
 shadow_offset = Vector2(3, 4)
+
+[sub_resource type="Curve" id="Curve_5p3c0"]
+_data = [Vector2(0, 0.469774), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_mk5g2")
@@ -160,3 +165,19 @@ offset_top = 997.0
 offset_right = 1078.0
 offset_bottom = 1028.0
 text = "Jugar de nuevo"
+
+[node name="ShakeX" type="Node" parent="." node_paths=PackedStringArray("target_node")]
+script = ExtResource("9_cdgol")
+target_node = NodePath("..")
+target_property = &"vibracion_x"
+min_value = -50.0
+max_value = 50.0
+fall_off = SubResource("Curve_5p3c0")
+
+[node name="ShakeY" type="Node" parent="." node_paths=PackedStringArray("target_node")]
+script = ExtResource("9_cdgol")
+target_node = NodePath("..")
+target_property = &"vibracion_y"
+min_value = -50.0
+max_value = 50.0
+fall_off = SubResource("Curve_5p3c0")
