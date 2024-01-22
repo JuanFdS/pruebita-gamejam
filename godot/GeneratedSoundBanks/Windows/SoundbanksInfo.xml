@@ -162,7 +162,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{4572CC10-8E1B-515C-3A0D-BDCFED6F5082}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{D61C0A68-58F9-F4BD-16A5-5BBD6CDC7131}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -173,6 +173,10 @@
 				<File Id="434895889" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Musiquita.wav</ShortName>
 					<CachePath>SFX/Musiquita_818F3B66.wem</CachePath>
+				</File>
+				<File Id="516738102" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Nuclear.wav</ShortName>
+					<CachePath>SFX/Nuclear_818F3B66.wem</CachePath>
 				</File>
 				<File Id="673327973" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Motor_Stop.wav</ShortName>
@@ -194,6 +198,11 @@
 						<MediaRef Id="434895889"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2281418185" Name="Nuclear">
+					<MediaRefs>
+						<MediaRef Id="516738102"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3432657254" Name="Run_Motor">
 					<MediaRefs>
 						<MediaRef Id="1046634596"/>
@@ -207,5 +216,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{B7CEACA2-0732-9819-BF32-F8CECF681A1E}</FileHash>
+	<FileHash>{4CE05818-7197-619F-16D5-415BE0096606}</FileHash>
 </SoundBanksInfo>
