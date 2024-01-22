@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://t0j8nsaogi6e"]
+[gd_scene load_steps=9 format=3 uid="uid://t0j8nsaogi6e"]
 
 [ext_resource type="PackedScene" uid="uid://bi5xf2kuaj6ku" path="res://player/Moto.tscn" id="1_afkvs"]
 [ext_resource type="Texture2D" uid="uid://bjjxfsma0hljk" path="res://assets/fondo/fondo.jpg" id="2_1cqqy"]
 [ext_resource type="Texture2D" uid="uid://vmc4b1om5g18" path="res://assets/player/moto_azul.png" id="2_uwi1d"]
 [ext_resource type="Texture2D" uid="uid://5bprk834dvob" path="res://assets/player/moto_naranja.png" id="3_0ei2q"]
 [ext_resource type="Texture2D" uid="uid://cdpgwongcf6b6" path="res://assets/player/moto_roja.png" id="4_heq7l"]
+[ext_resource type="Texture2D" uid="uid://ltp3djfw53tj" path="res://assets/player/moto_verde.png" id="5_iumqh"]
 [ext_resource type="Script" path="res://props/AreaDeMuerte.gd" id="6_pyhkn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_04qdl"]
@@ -32,7 +33,8 @@ color_camino = Color(1, 0, 0, 1)
 [node name="Moto4" parent="." instance=ExtResource("1_afkvs")]
 position = Vector2(1670, 1745)
 numero_jugador = -1
-color_camino = Color(0.980392, 0, 0.807843, 1)
+textura_moto = ExtResource("5_iumqh")
+color_camino = Color(0.239216, 0.682353, 0.356863, 1)
 
 [node name="Fondo" type="Sprite2D" parent="."]
 z_index = -10
@@ -65,3 +67,19 @@ shape = SubResource("RectangleShape2D_04qdl")
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 zoom = Vector2(0.5, 0.5)
+
+[node name="AkBank" type="AkBank" parent="."]
+bank = {
+"id": 3161908922,
+"name": "Main"
+}
+load_on = 1
+unload_on = 3
+
+[node name="AkEvent2D" type="AkEvent2D" parent="."]
+event = {
+"id": 3885268471,
+"name": "Drive_Motor_Player"
+}
+
+[node name="AkListener2D" type="AkListener2D" parent="."]
