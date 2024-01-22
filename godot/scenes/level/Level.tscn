@@ -1,42 +1,67 @@
-[gd_scene load_steps=3 format=3 uid="uid://t0j8nsaogi6e"]
+[gd_scene load_steps=8 format=3 uid="uid://t0j8nsaogi6e"]
 
-[ext_resource type="PackedScene" path="res://player/Moto.tscn" id="1_afkvs"]
+[ext_resource type="PackedScene" uid="uid://bi5xf2kuaj6ku" path="res://player/Moto.tscn" id="1_afkvs"]
+[ext_resource type="Texture2D" uid="uid://bjjxfsma0hljk" path="res://assets/fondo/fondo.jpg" id="2_1cqqy"]
+[ext_resource type="Texture2D" uid="uid://vmc4b1om5g18" path="res://assets/player/moto_azul.png" id="2_uwi1d"]
+[ext_resource type="Texture2D" uid="uid://5bprk834dvob" path="res://assets/player/moto_naranja.png" id="3_0ei2q"]
+[ext_resource type="Texture2D" uid="uid://cdpgwongcf6b6" path="res://assets/player/moto_roja.png" id="4_heq7l"]
+[ext_resource type="Script" path="res://props/AreaDeMuerte.gd" id="6_pyhkn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_04qdl"]
-size = Vector2(1235.5, 20)
+size = Vector2(2523, 104.004)
 
 [node name="Level" type="Node2D"]
 
 [node name="Moto" parent="." instance=ExtResource("1_afkvs")]
-position = Vector2(146, 459)
+position = Vector2(398, 349)
+textura_moto = ExtResource("2_uwi1d")
+color_camino = Color(0, 0.14902, 0.560784, 1)
 
 [node name="Moto2" parent="." instance=ExtResource("1_afkvs")]
-position = Vector2(1044, 445)
+position = Vector2(1623, 323)
 numero_jugador = 1
+textura_moto = ExtResource("3_0ei2q")
+color_camino = Color(0.988235, 0.67451, 0.380392, 1)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-zoom = Vector2(0.5, 0.5)
+[node name="Moto3" parent="." instance=ExtResource("1_afkvs")]
+position = Vector2(357, 1726)
+numero_jugador = -1
+textura_moto = ExtResource("4_heq7l")
+color_camino = Color(1, 0, 0, 1)
 
-[node name="Pared" type="StaticBody2D" parent="."]
+[node name="Moto4" parent="." instance=ExtResource("1_afkvs")]
+position = Vector2(1670, 1745)
+numero_jugador = -1
+color_camino = Color(0.980392, 0, 0.807843, 1)
+
+[node name="Fondo" type="Sprite2D" parent="."]
+z_index = -10
+texture = ExtResource("2_1cqqy")
+centered = false
+
+[node name="Pared" type="Area2D" parent="."]
 position = Vector2(3, 6)
-collision_layer = 2147483648
-collision_mask = 0
+collision_layer = 0
+script = ExtResource("6_pyhkn")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Pared"]
-position = Vector2(1195, 287)
+position = Vector2(2008, 821.5)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_04qdl")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Pared"]
-position = Vector2(-12, 259)
+position = Vector2(74, 943)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_04qdl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pared"]
-position = Vector2(566, -17)
+position = Vector2(987, 40)
 shape = SubResource("RectangleShape2D_04qdl")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Pared"]
-position = Vector2(616.25, 654)
+position = Vector2(1030, 1973)
 shape = SubResource("RectangleShape2D_04qdl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(0.5, 0.5)

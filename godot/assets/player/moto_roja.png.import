@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5bprk834dvob"
-path="res://.godot/imported/moto.png-eba532e8ab265bb4d09a47be96cbff1f.ctex"
+uid="uid://cdpgwongcf6b6"
+path="res://.godot/imported/moto_roja.png-e6303b671aef584791fa0a6f28d0bfd5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/moto.png"
-dest_files=["res://.godot/imported/moto.png-eba532e8ab265bb4d09a47be96cbff1f.ctex"]
+source_file="res://assets/player/moto_roja.png"
+dest_files=["res://.godot/imported/moto_roja.png-e6303b671aef584791fa0a6f28d0bfd5.ctex"]
 
 [params]
 

@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dr2xnuemd5wxp"]
+[gd_scene load_steps=2 format=3 uid="uid://cpgkwo4nalwkq"]
 
-[ext_resource type="Script" path="res://player/Camino.gd" id="1_prw1p"]
+[ext_resource type="Script" path="res://props/AreaDeMuerte.gd" id="2_xmvs6"]
 
 [node name="Camino" type="Line2D"]
 top_level = true
 z_index = -2
-script = ExtResource("1_prw1p")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
+script = ExtResource("2_xmvs6")
