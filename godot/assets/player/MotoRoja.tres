@@ -1,0 +1,37 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://c0n5unxlukp12"]
+
+[ext_resource type="Texture2D" uid="uid://cdpgwongcf6b6" path="res://assets/player/moto_roja.png" id="1_xodbq"]
+[ext_resource type="Texture2D" uid="uid://bvqu2r0ytur6g" path="res://assets/player/Moto roja rip 1.png" id="2_eyhc8"]
+[ext_resource type="Texture2D" uid="uid://t0oagidxbbee" path="res://assets/player/Moto roja rip 2.png" id="3_50186"]
+[ext_resource type="Texture2D" uid="uid://csak22wqkemmd" path="res://assets/player/Moto roja rip 3.png" id="4_h5p78"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xodbq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eyhc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_50186")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_h5p78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_50186")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_eyhc8")
+}],
+"loop": false,
+"name": &"rip",
+"speed": 10.0
+}]

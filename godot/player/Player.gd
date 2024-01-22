@@ -6,16 +6,19 @@ const TURN_SPEED = 3.0
 
 var direccion: Vector2 = Vector2.UP
 const CAMINO = preload("res://player/Camino.tscn")
+var viva = true
+var exploto = false
 
 @export var numero_jugador: int = 0
-@export var textura_moto: Texture2D : set = set_textura_moto
+@export var textura_moto: SpriteFrames : set = set_textura_moto
 @export var color_camino: Color
 
 @onready var camino: Line2D = CAMINO.instantiate()
 
-func set_textura_moto(new_textura: Texture2D):
+func set_textura_moto(new_textura: SpriteFrames):
 	textura_moto = new_textura
-	$Sprite2D.texture = new_textura
+	$AnimatedSprite2D.sprite_frames = new_textura
+	$AnimatedSprite2D.animation = "default"
 
 func _ready():
 	if Engine.is_editor_hint():
@@ -24,7 +27,8 @@ func _ready():
 	get_parent().add_child.call_deferred(camino)
 	$Timer.timeout.connect(func():
 		self.dejar_camino()
-		self.dejar_halo()
+		if viva:
+			self.dejar_halo()
 	)
 	
 func dejar_camino():
@@ -41,7 +45,7 @@ func dejar_camino():
 		forma_colision.shape = segmento
 
 func dejar_halo():
-	var s = $Sprite2D.duplicate()
+	var s = $AnimatedSprite2D.duplicate()
 	s.global_transform = global_transform
 	s.z_index = -1
 	s.top_level = true
@@ -59,12 +63,25 @@ func _physics_process(delta):
 		return
 	var target_direccion := MultiplayerInput.get_vector(numero_jugador, "move_left", "move_right", "move_up", "move_down")
 	
-	if !target_direccion.is_zero_approx() and abs(target_direccion.angle_to(direccion)) <= PI * 9 / 10:
-		direccion = direccion.move_toward(target_direccion, delta * TURN_SPEED)
-		velocity = direccion.normalized() * SPEED
-		rotation = direccion.angle() + PI/2
+	if viva:
+		if !target_direccion.is_zero_approx() and abs(target_direccion.angle_to(direccion)) <= PI * 9 / 10:
+			direccion = direccion.move_toward(target_direccion, delta * TURN_SPEED)
+			velocity = direccion.normalized() * SPEED
+			rotation = direccion.angle() + PI/2
+	else:
+		velocity = velocity.move_toward(Vector2.ZERO, delta * SPEED)
+		$AnimatedSprite2D.rotation += delta * velocity.length() * 0.1
+		if(not exploto and velocity.is_zero_approx()):
+			explotar()
 
 	move_and_slide()
 
+func explotar():
+	exploto = true
+	$AnimatedSprite2D.play("rip")
+
 func chocaste():
-	queue_free()
+	viva = false
+	$AnimatedSprite2D.animation = "rip"
+	#$AnimatedSprite2D.play("rip")
+	#queue_free()

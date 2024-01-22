@@ -1,0 +1,37 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://dfsxhv3ek3pd0"]
+
+[ext_resource type="Texture2D" uid="uid://ltp3djfw53tj" path="res://assets/player/moto_verde.png" id="1_r71p1"]
+[ext_resource type="Texture2D" uid="uid://deqq41n4dos7y" path="res://assets/player/Moto verde rip1.png" id="2_y0kgg"]
+[ext_resource type="Texture2D" uid="uid://8gxm4w6gqvcd" path="res://assets/player/Moto verde rip2.png" id="3_hsdi3"]
+[ext_resource type="Texture2D" uid="uid://grcat36x3qow" path="res://assets/player/Moto verde rip 3.png" id="4_2qiym"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_r71p1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_y0kgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hsdi3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2qiym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hsdi3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_y0kgg")
+}],
+"loop": false,
+"name": &"rip",
+"speed": 10.0
+}]

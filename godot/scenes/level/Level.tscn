@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://bi5xf2kuaj6ku" path="res://player/Moto.tscn" id="1_afkvs"]
 [ext_resource type="Texture2D" uid="uid://bjjxfsma0hljk" path="res://assets/fondo/fondo.jpg" id="2_1cqqy"]
-[ext_resource type="Texture2D" uid="uid://vmc4b1om5g18" path="res://assets/player/moto_azul.png" id="2_uwi1d"]
-[ext_resource type="Texture2D" uid="uid://5bprk834dvob" path="res://assets/player/moto_naranja.png" id="3_0ei2q"]
-[ext_resource type="Texture2D" uid="uid://cdpgwongcf6b6" path="res://assets/player/moto_roja.png" id="4_heq7l"]
-[ext_resource type="Texture2D" uid="uid://ltp3djfw53tj" path="res://assets/player/moto_verde.png" id="5_iumqh"]
+[ext_resource type="SpriteFrames" uid="uid://5e0dlsqn58v6" path="res://assets/player/MotoNaranja.tres" id="2_cvei0"]
+[ext_resource type="SpriteFrames" uid="uid://cwlerwd6fmrew" path="res://assets/player/MotoAzul.tres" id="2_gfi6n"]
+[ext_resource type="SpriteFrames" uid="uid://c0n5unxlukp12" path="res://assets/player/MotoRoja.tres" id="4_6htjq"]
+[ext_resource type="SpriteFrames" uid="uid://dfsxhv3ek3pd0" path="res://assets/player/MotoVerde.tres" id="5_0by8b"]
 [ext_resource type="Script" path="res://props/AreaDeMuerte.gd" id="6_pyhkn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_04qdl"]
@@ -15,25 +15,25 @@ size = Vector2(2523, 104.004)
 
 [node name="Moto" parent="." instance=ExtResource("1_afkvs")]
 position = Vector2(398, 349)
-textura_moto = ExtResource("2_uwi1d")
+textura_moto = ExtResource("2_gfi6n")
 color_camino = Color(0, 0.14902, 0.560784, 1)
 
 [node name="Moto2" parent="." instance=ExtResource("1_afkvs")]
 position = Vector2(1623, 323)
 numero_jugador = 1
-textura_moto = ExtResource("3_0ei2q")
+textura_moto = ExtResource("2_cvei0")
 color_camino = Color(0.988235, 0.67451, 0.380392, 1)
 
 [node name="Moto3" parent="." instance=ExtResource("1_afkvs")]
 position = Vector2(357, 1726)
 numero_jugador = -1
-textura_moto = ExtResource("4_heq7l")
+textura_moto = ExtResource("4_6htjq")
 color_camino = Color(1, 0, 0, 1)
 
 [node name="Moto4" parent="." instance=ExtResource("1_afkvs")]
 position = Vector2(1670, 1745)
 numero_jugador = -1
-textura_moto = ExtResource("5_iumqh")
+textura_moto = ExtResource("5_0by8b")
 color_camino = Color(0.239216, 0.682353, 0.356863, 1)
 
 [node name="Fondo" type="Sprite2D" parent="."]
@@ -68,6 +68,14 @@ shape = SubResource("RectangleShape2D_04qdl")
 anchor_mode = 0
 zoom = Vector2(0.5, 0.5)
 
+[node name="AkBank2" type="AkBank" parent="."]
+bank = {
+"id": 1355168291,
+"name": "Init"
+}
+load_on = 1
+unload_on = 3
+
 [node name="AkBank" type="AkBank" parent="."]
 bank = {
 "id": 3161908922,
@@ -78,8 +86,9 @@ unload_on = 3
 
 [node name="AkEvent2D" type="AkEvent2D" parent="."]
 event = {
-"id": 3885268471,
-"name": "Drive_Motor_Player"
+"id": 2438180711,
+"name": "Musiquita"
 }
+trigger_on = 2
 
 [node name="AkListener2D" type="AkListener2D" parent="."]
