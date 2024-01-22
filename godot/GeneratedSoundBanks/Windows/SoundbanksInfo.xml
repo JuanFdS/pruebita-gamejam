@@ -162,7 +162,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{B69748D5-8F04-851C-0753-D49A94C45960}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{4572CC10-8E1B-515C-3A0D-BDCFED6F5082}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -170,13 +170,13 @@
 					<ShortName>Explota.wav</ShortName>
 					<CachePath>SFX/Explota_818F3B66.wem</CachePath>
 				</File>
+				<File Id="434895889" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Musiquita.wav</ShortName>
+					<CachePath>SFX/Musiquita_818F3B66.wem</CachePath>
+				</File>
 				<File Id="673327973" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Motor_Stop.wav</ShortName>
 					<CachePath>SFX/Motor_Stop_818F3B66.wem</CachePath>
-				</File>
-				<File Id="696894501" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Musiquita.wav</ShortName>
-					<CachePath>SFX/Musiquita_818F3B66.wem</CachePath>
 				</File>
 				<File Id="1046634596" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Motor_Run.wav</ShortName>
@@ -189,23 +189,23 @@
 						<MediaRef Id="12819577"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="255144146" Name="Motor_Run">
+				<Event Id="1730564739" Name="Musica">
+					<MediaRefs>
+						<MediaRef Id="434895889"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3432657254" Name="Run_Motor">
 					<MediaRefs>
 						<MediaRef Id="1046634596"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="929220803" Name="Motor_Stop">
+				<Event Id="278130187" Name="Stop_Motor">
 					<MediaRefs>
 						<MediaRef Id="673327973"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="2438180711" Name="Musiquita">
-					<MediaRefs>
-						<MediaRef Id="696894501"/>
 					</MediaRefs>
 				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{C29E80C9-8666-8E65-B099-4C4620F1A9D0}</FileHash>
+	<FileHash>{B7CEACA2-0732-9819-BF32-F8CECF681A1E}</FileHash>
 </SoundBanksInfo>
