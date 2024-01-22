@@ -162,10 +162,50 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{3B51E889-948F-7EDA-A1E8-111109B087A1}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{B69748D5-8F04-851C-0753-D49A94C45960}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
+			<Media>
+				<File Id="12819577" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Explota.wav</ShortName>
+					<CachePath>SFX/Explota_818F3B66.wem</CachePath>
+				</File>
+				<File Id="673327973" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Motor_Stop.wav</ShortName>
+					<CachePath>SFX/Motor_Stop_818F3B66.wem</CachePath>
+				</File>
+				<File Id="696894501" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Musiquita.wav</ShortName>
+					<CachePath>SFX/Musiquita_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1046634596" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Motor_Run.wav</ShortName>
+					<CachePath>SFX/Motor_Run_818F3B66.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="680189572" Name="Explota">
+					<MediaRefs>
+						<MediaRef Id="12819577"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="255144146" Name="Motor_Run">
+					<MediaRefs>
+						<MediaRef Id="1046634596"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="929220803" Name="Motor_Stop">
+					<MediaRefs>
+						<MediaRef Id="673327973"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2438180711" Name="Musiquita">
+					<MediaRefs>
+						<MediaRef Id="696894501"/>
+					</MediaRefs>
+				</Event>
+			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8DBFE235-DB2B-B0C2-DE91-1B9636150A61}</FileHash>
+	<FileHash>{C29E80C9-8666-8E65-B099-4C4620F1A9D0}</FileHash>
 </SoundBanksInfo>

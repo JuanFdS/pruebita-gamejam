@@ -1,0 +1,12 @@
+Event	ID	Name			Wwise Object Path	Notes
+	255144146	Motor_Run			\Default Work Unit\Motor_Run	
+	680189572	Explota			\Default Work Unit\Explota	
+	929220803	Motor_Stop			\Default Work Unit\Motor_Stop	
+	2438180711	Musiquita			\Default Work Unit\Musiquita	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	12819577	Explota	E:\Documentos\WwiseProjects\pruebita-gamejam\.cache\Windows\SFX\Explota_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Explota		245204
+	673327973	Motor_Stop	E:\Documentos\WwiseProjects\pruebita-gamejam\.cache\Windows\SFX\Motor_Stop_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Motor_Stop		784440
+	696894501	Musiquita	E:\Documentos\WwiseProjects\pruebita-gamejam\.cache\Windows\SFX\Musiquita_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Musiquita		2353120
+	1046634596	Motor_Run	E:\Documentos\WwiseProjects\pruebita-gamejam\.cache\Windows\SFX\Motor_Run_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Motor_Run		2353120
+
