@@ -2,16 +2,18 @@ class_name AK
 
 class EVENTS:
 
-	const MUSICA = 1730564739
-	const STOP_MOTOR = 278130187
 	const RUN_MOTOR = 3432657254
 	const EXPLOTA = 680189572
+	const MUSICA = 1730564739
+	const STOP_MOTOR = 278130187
+	const NUCLEAR = 2281418185
 
 	const _dict = {
+		"Run_Motor": RUN_MOTOR,
+		"Explota": EXPLOTA,
 		"Musica": MUSICA,
 		"Stop_Motor": STOP_MOTOR,
-		"Run_Motor": RUN_MOTOR,
-		"Explota": EXPLOTA
+		"Nuclear": NUCLEAR
 	}
 
 class STATES:
@@ -24,28 +26,28 @@ class SWITCHES:
 
 class GAME_PARAMETERS:
 
-	const SS_AIR_MONTH = 2648548617
 	const SS_AIR_RPM = 822163944
+	const SS_AIR_MONTH = 2648548617
+	const SS_AIR_PRESENCE = 3847924954
 	const SS_AIR_TIMEOFDAY = 3203397129
 	const SS_AIR_TURBULENCE = 4160247818
-	const SS_AIR_PRESENCE = 3847924954
 	const SS_AIR_STORM = 3715662592
-	const SS_AIR_FURY = 1029930033
-	const SS_AIR_SIZE = 3074696722
 	const SS_AIR_FEAR = 1351367891
 	const SS_AIR_FREEFALL = 3002758120
+	const SS_AIR_FURY = 1029930033
+	const SS_AIR_SIZE = 3074696722
 
 	const _dict = {
-		"SS_Air_Month": SS_AIR_MONTH,
 		"SS_Air_RPM": SS_AIR_RPM,
+		"SS_Air_Month": SS_AIR_MONTH,
+		"SS_Air_Presence": SS_AIR_PRESENCE,
 		"SS_Air_TimeOfDay": SS_AIR_TIMEOFDAY,
 		"SS_Air_Turbulence": SS_AIR_TURBULENCE,
-		"SS_Air_Presence": SS_AIR_PRESENCE,
 		"SS_Air_Storm": SS_AIR_STORM,
-		"SS_Air_Fury": SS_AIR_FURY,
-		"SS_Air_Size": SS_AIR_SIZE,
 		"SS_Air_Fear": SS_AIR_FEAR,
-		"SS_Air_Freefall": SS_AIR_FREEFALL
+		"SS_Air_Freefall": SS_AIR_FREEFALL,
+		"SS_Air_Fury": SS_AIR_FURY,
+		"SS_Air_Size": SS_AIR_SIZE
 	}
 
 class TRIGGERS:
@@ -76,12 +78,12 @@ class AUX_BUSSES:
 
 class AUDIO_DEVICES:
 
-	const SYSTEM = 3859886410
 	const NO_OUTPUT = 2317455096
+	const SYSTEM = 3859886410
 
 	const _dict = {
-		"System": SYSTEM,
-		"No_Output": NO_OUTPUT
+		"No_Output": NO_OUTPUT,
+		"System": SYSTEM
 	}
 
 class EXTERNAL_SOURCES:
