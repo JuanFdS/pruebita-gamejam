@@ -3,13 +3,13 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const TURN_SPEED = 3.0
-
+@export var nombre: String
 @export var direccion: Vector2 = Vector2.UP
 const CAMINO = preload("res://player/Camino.tscn")
 var viva = true
 var exploto = false
 var speed = SPEED
-
+var usando_turbo = false
 signal explote
 
 @export var numero_jugador: int = 0
@@ -24,6 +24,7 @@ func set_textura_moto(new_textura: SpriteFrames):
 	$AnimatedSprite2D.animation = "default"
 
 func _ready():
+	$Label.text = nombre
 	if Engine.is_editor_hint():
 		return
 	velocity = direccion.normalized() * SPEED
@@ -66,14 +67,14 @@ func _physics_process(delta):
 	if Engine.is_editor_hint():
 		return
 	var target_direccion := MultiplayerInput.get_vector(numero_jugador, "move_left", "move_right", "move_up", "move_down")
-	var usando_turbo := MultiplayerInput.is_action_pressed(numero_jugador, "turbo") and viva
+	usando_turbo = MultiplayerInput.is_action_pressed(numero_jugador, "turbo") and viva
 	%Turbo.emitting = usando_turbo
 	if viva:
-		if !target_direccion.is_zero_approx() and abs(target_direccion.angle_to(direccion)) <= PI * 9 / 10:
+		if !target_direccion.is_zero_approx() and abs(target_direccion.angle_to(direccion)) <= PI * 15 / 16:
 			direccion = direccion.move_toward(target_direccion, delta * TURN_SPEED)
 			rotation = direccion.angle() + PI/2
 		if usando_turbo:
-			speed = SPEED * 3.0
+			speed = SPEED * 2.0
 			#var max_turbo_speed = SPEED * 2.0
 			#speed = move_toward(speed, max_turbo_speed, delta * 5.0)
 		else:

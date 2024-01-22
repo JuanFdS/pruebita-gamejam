@@ -33,6 +33,7 @@ script = ExtResource("1_mk5g2")
 [node name="Moto" parent="Motos" instance=ExtResource("1_afkvs")]
 position = Vector2(398, 349)
 rotation = 3.14159
+nombre = "Linea C"
 direccion = Vector2(0, 1)
 textura_moto = ExtResource("2_gfi6n")
 color_camino = Color(0.184314, 0.372549, 0.423529, 1)
@@ -40,6 +41,7 @@ color_camino = Color(0.184314, 0.372549, 0.423529, 1)
 [node name="Moto2" parent="Motos" instance=ExtResource("1_afkvs")]
 position = Vector2(1623, 323)
 rotation = 3.14159
+nombre = "Linea H"
 direccion = Vector2(0, 1)
 numero_jugador = 1
 textura_moto = ExtResource("2_cvei0")
@@ -47,12 +49,14 @@ color_camino = Color(0.87451, 0.435294, 0.152941, 1)
 
 [node name="Moto3" parent="Motos" instance=ExtResource("1_afkvs")]
 position = Vector2(357, 1726)
+nombre = "Linea B"
 numero_jugador = 2
 textura_moto = ExtResource("4_6htjq")
 color_camino = Color(0.6, 0.219608, 0.113725, 1)
 
 [node name="Moto4" parent="Motos" instance=ExtResource("1_afkvs")]
 position = Vector2(1670, 1745)
+nombre = "Linea D"
 numero_jugador = -1
 textura_moto = ExtResource("5_0by8b")
 color_camino = Color(0.435294, 0.533333, 0.360784, 1)
@@ -97,14 +101,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 955.0
+offset_left = 501.0
 offset_top = 879.0
-offset_right = 2017.0
+offset_right = 1563.0
 offset_bottom = 1152.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "5"
 label_settings = SubResource("LabelSettings_dk1v7")
+horizontal_alignment = 1
 
 [node name="AkBank2" type="AkBank" parent="."]
 bank = {
@@ -181,3 +186,10 @@ target_property = &"vibracion_y"
 min_value = -50.0
 max_value = 50.0
 fall_off = SubResource("Curve_5p3c0")
+
+[node name="SonidoTurbo" type="AkEvent2D" parent="."]
+event = {
+"id": 1624708103,
+"name": "Turbo"
+}
+unique_name_in_owner = true
