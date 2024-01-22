@@ -162,23 +162,10 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{04962389-9AF7-E4FF-8322-A133F64CF603}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{3B51E889-948F-7EDA-A1E8-111109B087A1}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
-			<Media>
-				<File Id="20792368" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Motor.wav</ShortName>
-					<CachePath>SFX/Motor_818F3B66.wem</CachePath>
-				</File>
-			</Media>
-			<Events>
-				<Event Id="3885268471" Name="Drive_Motor_Player">
-					<MediaRefs>
-						<MediaRef Id="20792368"/>
-					</MediaRefs>
-				</Event>
-			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A5E3F0B6-0A80-590F-2E66-6415DC3B2594}</FileHash>
+	<FileHash>{8DBFE235-DB2B-B0C2-DE91-1B9636150A61}</FileHash>
 </SoundBanksInfo>
