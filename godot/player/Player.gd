@@ -4,10 +4,12 @@ extends CharacterBody2D
 const SPEED = 300.0
 const TURN_SPEED = 3.0
 
-var direccion: Vector2 = Vector2.UP
+@export var direccion: Vector2 = Vector2.UP
 const CAMINO = preload("res://player/Camino.tscn")
 var viva = true
 var exploto = false
+
+signal explote
 
 @export var numero_jugador: int = 0
 @export var textura_moto: SpriteFrames : set = set_textura_moto
@@ -78,10 +80,12 @@ func _physics_process(delta):
 
 func explotar():
 	exploto = true
+	explote.emit()
 	$AnimatedSprite2D.play("rip")
 
 func chocaste():
 	viva = false
 	$AnimatedSprite2D.animation = "rip"
+	$SonidoExplosion.post_event()
 	#$AnimatedSprite2D.play("rip")
 	#queue_free()

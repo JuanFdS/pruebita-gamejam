@@ -24,3 +24,9 @@ position = Vector2(0, 29)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_0pkva")
+
+[node name="SonidoExplosion" type="AkEvent2D" parent="."]
+event = {
+"id": 680189572,
+"name": "Explota"
+}
