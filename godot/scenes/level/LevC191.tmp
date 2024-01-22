@@ -1,0 +1,162 @@
+[gd_scene load_steps=11 format=3 uid="uid://t0j8nsaogi6e"]
+
+[ext_resource type="PackedScene" uid="uid://bi5xf2kuaj6ku" path="res://player/Moto.tscn" id="1_afkvs"]
+[ext_resource type="Script" path="res://scenes/level/Level.gd" id="1_mk5g2"]
+[ext_resource type="Texture2D" uid="uid://bjjxfsma0hljk" path="res://assets/fondo/fondo.jpg" id="2_1cqqy"]
+[ext_resource type="SpriteFrames" uid="uid://5e0dlsqn58v6" path="res://assets/player/MotoNaranja.tres" id="2_cvei0"]
+[ext_resource type="SpriteFrames" uid="uid://cwlerwd6fmrew" path="res://assets/player/MotoAzul.tres" id="2_gfi6n"]
+[ext_resource type="SpriteFrames" uid="uid://c0n5unxlukp12" path="res://assets/player/MotoRoja.tres" id="4_6htjq"]
+[ext_resource type="SpriteFrames" uid="uid://dfsxhv3ek3pd0" path="res://assets/player/MotoVerde.tres" id="5_0by8b"]
+[ext_resource type="Script" path="res://props/AreaDeMuerte.gd" id="6_pyhkn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04qdl"]
+size = Vector2(2523, 104.004)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dk1v7"]
+font_size = 200
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 30
+shadow_color = Color(0, 0, 0, 0.490196)
+shadow_offset = Vector2(3, 4)
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_mk5g2")
+
+[node name="Motos" type="Node2D" parent="."]
+
+[node name="Moto" parent="Motos" instance=ExtResource("1_afkvs")]
+position = Vector2(398, 349)
+rotation = 3.14159
+direccion = Vector2(0, 1)
+textura_moto = ExtResource("2_gfi6n")
+color_camino = Color(0.184314, 0.372549, 0.423529, 1)
+
+[node name="Moto2" parent="Motos" instance=ExtResource("1_afkvs")]
+position = Vector2(1623, 323)
+rotation = 3.14159
+direccion = Vector2(0, 1)
+numero_jugador = 1
+textura_moto = ExtResource("2_cvei0")
+color_camino = Color(0.87451, 0.435294, 0.152941, 1)
+
+[node name="Moto3" parent="Motos" instance=ExtResource("1_afkvs")]
+position = Vector2(357, 1726)
+numero_jugador = 2
+textura_moto = ExtResource("4_6htjq")
+color_camino = Color(0.6, 0.219608, 0.113725, 1)
+
+[node name="Moto4" parent="Motos" instance=ExtResource("1_afkvs")]
+position = Vector2(1670, 1745)
+numero_jugador = -1
+textura_moto = ExtResource("5_0by8b")
+color_camino = Color(0.435294, 0.533333, 0.360784, 1)
+
+[node name="Fondo" type="Sprite2D" parent="."]
+z_index = -10
+texture = ExtResource("2_1cqqy")
+centered = false
+
+[node name="Pared" type="Area2D" parent="."]
+position = Vector2(3, 6)
+collision_layer = 0
+script = ExtResource("6_pyhkn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pared"]
+position = Vector2(2008, 821.5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_04qdl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Pared"]
+position = Vector2(74, 943)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_04qdl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared"]
+position = Vector2(987, 40)
+shape = SubResource("RectangleShape2D_04qdl")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Pared"]
+position = Vector2(1030, 1973)
+shape = SubResource("RectangleShape2D_04qdl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(0.5, 0.5)
+
+[node name="Texto" type="Label" parent="Camera2D"]
+unique_name_in_owner = true
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 955.0
+offset_top = 879.0
+offset_right = 2017.0
+offset_bottom = 1152.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "5"
+label_settings = SubResource("LabelSettings_dk1v7")
+
+[node name="AkBank2" type="AkBank" parent="."]
+bank = {
+"id": 1355168291,
+"name": "Init"
+}
+load_on = 1
+unload_on = 3
+
+[node name="AkBank" type="AkBank" parent="."]
+bank = {
+"id": 3161908922,
+"name": "Main"
+}
+load_on = 1
+unload_on = 3
+
+[node name="MusicaDeFondo" type="AkEvent2D" parent="."]
+event = {
+"id": 1730564739,
+"name": "Musica"
+}
+trigger_on = 2
+
+[node name="MotosFrenadas" type="AkEvent2D" parent="."]
+event = {
+"id": 278130187,
+"name": "Stop_Motor"
+}
+trigger_on = 2
+stop_on = 3
+stop_fade_time = 1
+unique_name_in_owner = true
+
+[node name="MotosAndando" type="AkEvent2D" parent="."]
+event = {
+"id": 3432657254,
+"name": "Run_Motor"
+}
+stop_on = 3
+unique_name_in_owner = true
+
+[node name="AkListener2D" type="AkListener2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VolverAJugar" type="Button" parent="."]
+unique_name_in_owner = true
+z_index = 5
+offset_left = 954.0
+offset_top = 997.0
+offset_right = 1078.0
+offset_bottom = 1028.0
+text = "Jugar de nuevo"
