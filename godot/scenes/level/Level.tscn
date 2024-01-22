@@ -1,49 +1,42 @@
-[gd_scene load_steps=5 format=3 uid="uid://t0j8nsaogi6e"]
+[gd_scene load_steps=3 format=3 uid="uid://t0j8nsaogi6e"]
 
-[ext_resource type="Script" path="res://player/Player.gd" id="1_1bkyq"]
-[ext_resource type="Texture2D" uid="uid://d4d3y4s1d4yxe" path="res://assets/player/moto.png" id="1_8e7d1"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5xtj"]
-size = Vector2(20, 58)
+[ext_resource type="PackedScene" path="res://player/Moto.tscn" id="1_afkvs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_04qdl"]
-size = Vector2(602, 20)
+size = Vector2(1235.5, 20)
 
 [node name="Level" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(244, 147)
-script = ExtResource("1_1bkyq")
+[node name="Moto" parent="." instance=ExtResource("1_afkvs")]
+position = Vector2(146, 459)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-texture = ExtResource("1_8e7d1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_j5xtj")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CharacterBody2D"]
+[node name="Moto2" parent="." instance=ExtResource("1_afkvs")]
+position = Vector2(1044, 445)
+numero_jugador = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+zoom = Vector2(0.5, 0.5)
 
 [node name="Pared" type="StaticBody2D" parent="."]
 position = Vector2(3, 6)
+collision_layer = 2147483648
+collision_mask = 0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Pared"]
-position = Vector2(582, 248)
+position = Vector2(1195, 287)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_04qdl")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Pared"]
-position = Vector2(-7.00001, 253)
+position = Vector2(-12, 259)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_04qdl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pared"]
-position = Vector2(291, 0)
+position = Vector2(566, -17)
 shape = SubResource("RectangleShape2D_04qdl")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Pared"]
-position = Vector2(291, 332)
+position = Vector2(616.25, 654)
 shape = SubResource("RectangleShape2D_04qdl")
