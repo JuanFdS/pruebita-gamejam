@@ -2,15 +2,15 @@ class_name AK
 
 class EVENTS:
 
-	const MUSIQUITA = 2438180711
-	const MOTOR_STOP = 929220803
-	const MOTOR_RUN = 255144146
+	const MUSICA = 1730564739
+	const STOP_MOTOR = 278130187
+	const RUN_MOTOR = 3432657254
 	const EXPLOTA = 680189572
 
 	const _dict = {
-		"Musiquita": MUSIQUITA,
-		"Motor_Stop": MOTOR_STOP,
-		"Motor_Run": MOTOR_RUN,
+		"Musica": MUSICA,
+		"Stop_Motor": STOP_MOTOR,
+		"Run_Motor": RUN_MOTOR,
 		"Explota": EXPLOTA
 	}
 
