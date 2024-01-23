@@ -11,6 +11,8 @@ jobs:
     container: barichello/godot-ci:4.2.1
     steps:
       - uses: actions/checkout@v4
+        with:
+          lfs: true
       - name: Cache import assets
         uses: actions/cache@v3
         with:
@@ -24,6 +26,8 @@ jobs:
     needs: import-assets
     steps:
       - uses: actions/checkout@v4
+        with:
+          lfs: true
       - uses: actions/cache@v3
         with:
           path: .godot/imported/
@@ -67,6 +71,8 @@ jobs:
     needs: export-game
     steps:
       - uses: actions/checkout@v4
+        with:
+          lfs: true
       - uses: actions/download-artifact@v4
         with:
           name: LinuxX11
@@ -84,6 +90,8 @@ jobs:
     needs: export-game
     steps:
       - uses: actions/checkout@v4
+        with:
+          lfs: true
       - uses: actions/download-artifact@v4
         with:
           name: Windows
@@ -101,6 +109,8 @@ jobs:
     needs: export-game
     steps:
       - uses: actions/checkout@v4
+        with:
+          lfs: true
       - uses: actions/download-artifact@v4
         with:
           name: macOS
@@ -118,6 +128,8 @@ jobs:
     needs: export-game
     steps:
       - uses: actions/checkout@v4
+        with:
+          lfs: true
       - uses: actions/download-artifact@v4
         with:
           name: HTML5
