@@ -1,8 +1,12 @@
 @tool
 extends CharacterBody2D
 
+enum ConfigIfUsingKeyboard { WASD, Arrows }
+
+
 const SPEED = 300.0
 const TURN_SPEED = 3.0
+@export var config_if_using_keyboard: ConfigIfUsingKeyboard = ConfigIfUsingKeyboard.Arrows
 @export var nombre: String
 @export var direccion: Vector2 = Vector2.UP
 const CAMINO = preload("res://player/Camino.tscn")
@@ -27,6 +31,8 @@ func _ready():
 	$Label.text = nombre
 	if Engine.is_editor_hint():
 		return
+	if(not MultiplayerInput.device_actions.has(numero_jugador)):
+		numero_jugador = -1
 	velocity = direccion.normalized() * SPEED
 	camino.default_color = color_camino
 	get_parent().add_child.call_deferred(camino)
@@ -66,8 +72,13 @@ func dejar_halo():
 func _physics_process(delta):
 	if Engine.is_editor_hint():
 		return
-	var target_direccion := MultiplayerInput.get_vector(numero_jugador, "move_left", "move_right", "move_up", "move_down")
-	usando_turbo = MultiplayerInput.is_action_pressed(numero_jugador, "turbo") and viva
+	var target_direccion: Vector2
+	if(numero_jugador == -1 and config_if_using_keyboard == ConfigIfUsingKeyboard.WASD):
+		target_direccion = Input.get_vector("move_left_wasd", "move_right_wasd", "move_up_wasd", "move_down_wasd")
+		usando_turbo = Input.is_action_pressed("turbo_wasd") and viva
+	else:
+		target_direccion = MultiplayerInput.get_vector(numero_jugador, "move_left", "move_right", "move_up", "move_down")
+		usando_turbo = MultiplayerInput.is_action_pressed(numero_jugador, "turbo") and viva
 	%Turbo.emitting = usando_turbo
 	if viva:
 		if !target_direccion.is_zero_approx() and abs(target_direccion.angle_to(direccion)) <= PI * 15 / 16:

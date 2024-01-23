@@ -34,12 +34,12 @@ func chequear_si_termino_el_juego():
 
 func _process(delta):
 	var motos_vivas = motos.filter(func(moto): return moto.viva)
-	%Texto.visible = %Timer.time_left > 1.0
+	%Texto.visible = %Timer.time_left > 0.0
 	if(hay_un_ganador()):
 		%Texto.visible = true
 		%Texto.text = "Gano %s!" % motos_vivas.front().nombre
 	else:
-		%Texto.text = "%.0f" % %Timer.time_left
+		%Texto.text = "%.0f" % %Timer.time_left if %Timer.time_left > 1.0 else "¡Mandale!"
 	$Camera2D.position.x = vibracion_x
 	$Camera2D.position.y = vibracion_y
 	if(motos.any(func(moto): return moto.usando_turbo)):

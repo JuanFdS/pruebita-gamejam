@@ -41,6 +41,7 @@ color_camino = Color(0.184314, 0.372549, 0.423529, 1)
 [node name="Moto2" parent="Motos" instance=ExtResource("1_afkvs")]
 position = Vector2(1623, 323)
 rotation = 3.14159
+config_if_using_keyboard = 0
 nombre = "Linea H"
 direccion = Vector2(0, 1)
 numero_jugador = 1
@@ -56,8 +57,9 @@ color_camino = Color(0.6, 0.219608, 0.113725, 1)
 
 [node name="Moto4" parent="Motos" instance=ExtResource("1_afkvs")]
 position = Vector2(1670, 1745)
+config_if_using_keyboard = 0
 nombre = "Linea D"
-numero_jugador = -1
+numero_jugador = 3
 textura_moto = ExtResource("5_0by8b")
 color_camino = Color(0.435294, 0.533333, 0.360784, 1)
 
