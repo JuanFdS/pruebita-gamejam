@@ -33,6 +33,20 @@ position = Vector2(0, 29)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_0pkva")
 
+[node name="SonidoRIP" type="AkEvent2D" parent="." groups=["wwise"]]
+event = {
+"id": 680189572,
+"name": "Explota"
+}
+trigger_on = 2
+
+[node name="SonidoExplosion" type="AkEvent2D" parent="." groups=["wwise"]]
+event = {
+"id": 2281418185,
+"name": "Nuclear"
+}
+trigger_on = 2
+
 [node name="Turbo" type="CPUParticles2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(0, 25)

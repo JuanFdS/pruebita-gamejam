@@ -22,6 +22,13 @@ signal explote
 
 @onready var camino: Line2D = CAMINO.instantiate()
 
+func _enter_tree():
+	if OS.has_feature("web"):
+		var wwise_nodes = [$SonidoRIP, $SonidoExplosion]
+		wwise_nodes.map(func(node):
+			node.free()
+		)
+
 func set_textura_moto(new_textura: SpriteFrames):
 	textura_moto = new_textura
 	$AnimatedSprite2D.sprite_frames = new_textura

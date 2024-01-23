@@ -5,6 +5,16 @@ var vibracion_x: float = 0.0
 var vibracion_y: float = 0.0
 var sonando_turbo = false
 
+func _enter_tree():
+	if OS.has_feature("web"):
+		var wwise_nodes = [
+			$AkBank2, $AkBank, $MusicaDeFondo, %MotosFrenadas, %MotosAndando, $AkListener2D, %SonidoTurbo
+		]
+		wwise_nodes.map(func(node):
+			#remove_child(node)
+			node.free()
+		)
+
 func _ready():
 	%VolverAJugar.visible = false
 	%VolverAJugar.pressed.connect(func(): get_tree().reload_current_scene())

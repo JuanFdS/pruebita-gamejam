@@ -33,7 +33,6 @@ script = ExtResource("1_mk5g2")
 [node name="Moto" parent="Motos" instance=ExtResource("1_afkvs")]
 position = Vector2(398, 349)
 rotation = 3.14159
-config_if_using_keyboard = 1
 nombre = "Linea C"
 direccion = Vector2(0, 1)
 textura_moto = ExtResource("2_gfi6n")
@@ -51,7 +50,6 @@ color_camino = Color(0.87451, 0.435294, 0.152941, 1)
 
 [node name="Moto3" parent="Motos" instance=ExtResource("1_afkvs")]
 position = Vector2(357, 1726)
-config_if_using_keyboard = 1
 nombre = "Linea B"
 numero_jugador = 2
 textura_moto = ExtResource("4_6htjq")
@@ -114,6 +112,50 @@ grow_vertical = 2
 text = "5"
 label_settings = SubResource("LabelSettings_dk1v7")
 horizontal_alignment = 1
+
+[node name="AkBank2" type="AkBank" parent="." groups=["wwise"]]
+bank = {
+"id": 1355168291,
+"name": "Init"
+}
+load_on = 2
+unload_on = 3
+
+[node name="AkBank" type="AkBank" parent="." groups=["wwise"]]
+bank = {
+"id": 3161908922,
+"name": "Main"
+}
+load_on = 2
+unload_on = 3
+
+[node name="MusicaDeFondo" type="AkEvent2D" parent="." groups=["wwise"]]
+event = {
+"id": 1730564739,
+"name": "Musica"
+}
+trigger_on = 2
+
+[node name="MotosFrenadas" type="AkEvent2D" parent="." groups=["wwise"]]
+event = {
+"id": 278130187,
+"name": "Stop_Motor"
+}
+trigger_on = 2
+stop_on = 3
+stop_fade_time = 1
+unique_name_in_owner = true
+
+[node name="MotosAndando" type="AkEvent2D" parent="." groups=["wwise"]]
+event = {
+"id": 3432657254,
+"name": "Run_Motor"
+}
+trigger_on = 2
+stop_on = 3
+unique_name_in_owner = true
+
+[node name="AkListener2D" type="AkListener2D" parent="." groups=["wwise"]]
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
