@@ -33,6 +33,7 @@ script = ExtResource("1_mk5g2")
 [node name="Moto" parent="Motos" instance=ExtResource("1_afkvs")]
 position = Vector2(398, 349)
 rotation = 3.14159
+config_if_using_keyboard = 1
 nombre = "Linea C"
 direccion = Vector2(0, 1)
 textura_moto = ExtResource("2_gfi6n")
@@ -50,6 +51,7 @@ color_camino = Color(0.87451, 0.435294, 0.152941, 1)
 
 [node name="Moto3" parent="Motos" instance=ExtResource("1_afkvs")]
 position = Vector2(357, 1726)
+config_if_using_keyboard = 1
 nombre = "Linea B"
 numero_jugador = 2
 textura_moto = ExtResource("4_6htjq")
