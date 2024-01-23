@@ -105,10 +105,10 @@ func explotar():
 	exploto = true
 	explote.emit()
 	$AnimatedSprite2D.play("rip")
-	$SonidoExplosion.post_event()
+	#$SonidoExplosion.post_event()
 
 func chocaste():
 	viva = false
 	$AnimatedSprite2D.animation = "rip"
-	$SonidoRIP.post_event()
+	#$SonidoRIP.post_event()
 

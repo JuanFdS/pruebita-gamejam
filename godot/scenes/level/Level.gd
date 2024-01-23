@@ -16,8 +16,8 @@ func _ready():
 	motos.map(func(moto: Node2D):
 		moto.set_physics_process(true)
 	)
-	%MotosFrenadas.stop_event()
-	%MotosAndando.post_event()
+	#%MotosFrenadas.stop_event()
+	#%MotosAndando.post_event()
 	
 func on_moto_exploto():
 	$ShakeX.start(1.0)
@@ -45,7 +45,7 @@ func _process(delta):
 	if(motos.any(func(moto): return moto.usando_turbo)):
 		if(not sonando_turbo):
 			sonando_turbo = true
-			%SonidoTurbo.post_event()
+			#%SonidoTurbo.post_event()
 	else:
 		sonando_turbo = false
-		%SonidoTurbo.stop_event()
+		#%SonidoTurbo.stop_event()

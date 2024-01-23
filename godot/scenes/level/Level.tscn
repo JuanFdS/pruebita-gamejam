@@ -115,49 +115,6 @@ text = "5"
 label_settings = SubResource("LabelSettings_dk1v7")
 horizontal_alignment = 1
 
-[node name="AkBank2" type="AkBank" parent="."]
-bank = {
-"id": 1355168291,
-"name": "Init"
-}
-load_on = 1
-unload_on = 3
-
-[node name="AkBank" type="AkBank" parent="."]
-bank = {
-"id": 3161908922,
-"name": "Main"
-}
-load_on = 1
-unload_on = 3
-
-[node name="MusicaDeFondo" type="AkEvent2D" parent="."]
-event = {
-"id": 1730564739,
-"name": "Musica"
-}
-trigger_on = 2
-
-[node name="MotosFrenadas" type="AkEvent2D" parent="."]
-event = {
-"id": 278130187,
-"name": "Stop_Motor"
-}
-trigger_on = 2
-stop_on = 3
-stop_fade_time = 1
-unique_name_in_owner = true
-
-[node name="MotosAndando" type="AkEvent2D" parent="."]
-event = {
-"id": 3432657254,
-"name": "Run_Motor"
-}
-stop_on = 3
-unique_name_in_owner = true
-
-[node name="AkListener2D" type="AkListener2D" parent="."]
-
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
 wait_time = 3.0
